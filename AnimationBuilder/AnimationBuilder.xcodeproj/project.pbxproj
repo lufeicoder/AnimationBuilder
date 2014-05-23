@@ -40,6 +40,7 @@
 		F76ACE44192F321F00D364FA /* POPSpringAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = F76ACE29192F321F00D364FA /* POPSpringAnimation.mm */; };
 		F76ACE45192F321F00D364FA /* POPVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = F76ACE2D192F321F00D364FA /* POPVector.mm */; };
 		F76ACE46192F321F00D364FA /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F76ACE30192F321F00D364FA /* TransformationMatrix.cpp */; };
+		F76ACE48192F3BCD00D364FA /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76ACE47192F3BCD00D364FA /* Reveal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		F76ACE30192F321F00D364FA /* TransformationMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformationMatrix.cpp; sourceTree = "<group>"; };
 		F76ACE31192F321F00D364FA /* TransformationMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformationMatrix.h; sourceTree = "<group>"; };
 		F76ACE32192F321F00D364FA /* UnitBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitBezier.h; sourceTree = "<group>"; };
+		F76ACE47192F3BCD00D364FA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				F76ACD78192F307C00D364FA /* CoreGraphics.framework in Frameworks */,
 				F76ACD7A192F307C00D364FA /* UIKit.framework in Frameworks */,
 				F76ACD76192F307C00D364FA /* Foundation.framework in Frameworks */,
+				F76ACE48192F3BCD00D364FA /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +177,7 @@
 		F76ACD74192F307C00D364FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F76ACE47192F3BCD00D364FA /* Reveal.framework */,
 				F76ACD75192F307C00D364FA /* Foundation.framework */,
 				F76ACD77192F307C00D364FA /* CoreGraphics.framework */,
 				F76ACD79192F307C00D364FA /* UIKit.framework */,
@@ -538,10 +542,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnimationBuilder/AnimationBuilder-Prefix.pch";
 				INFOPLIST_FILE = "AnimationBuilder/AnimationBuilder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -552,10 +565,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AnimationBuilder/AnimationBuilder-Prefix.pch";
 				INFOPLIST_FILE = "AnimationBuilder/AnimationBuilder-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
